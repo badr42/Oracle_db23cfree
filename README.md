@@ -1,4 +1,4 @@
-# NodeRed + Mosquitto Server
+# Oracle Database 23C Free installation guide
 
 Terraform script that helps you provision Nodered and Mosquitto server on OCI
 
