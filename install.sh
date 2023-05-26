@@ -23,7 +23,7 @@ dnf -y localinstall oracle-database-free-23c-1.0-1.el8.x86_64.rpm
 #Configure the Database
 echo "***Configuring DB***" 
 
-#export DB_PASSWORD=Tiger$tr0ng2023
+export DB_PASSWORD=Tiger$tr0ng2023
 (echo "${DB_PASSWORD}"; echo "${DB_PASSWORD}";) | /etc/init.d/oracle-free-23c configure
 
 
