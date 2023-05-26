@@ -43,6 +43,19 @@ terraform apply
 ```
 
 
-**After applying, the service will be ready in about 5 minutes** (it will install OS dependencies, as well as the packages needed to get openMPI to work)
 
-## Post configuration
+## Connect to the DB
+
+ssh -i server.key opc@<instance-public-ip>
+
+Switch to user Oracle  
+sudo su - oracle 
+
+**set the environment variables**
+export ORACLE_SID=FREE 
+export ORAENV_ASK=NO 
+. /opt/oracle/product/23c/dbhomeFree/bin/oraenv
+cd $ORACLE_HOME/bin
+  
+lsnrctl status
+./sqlplus / as sysdba

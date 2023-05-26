@@ -50,7 +50,7 @@ resource "oci_core_instance" "instance" {
 
   provisioner "remote-exec" {
     inline = [
-      "export TP=${var.Node_red_pass}",
+      "export TP=${var.DB_PASS}",
       "wget -qO - 'https://raw.githubusercontent.com/badr42/Oracle_db23cfree/main/install.sh' | bash -s ${var.DB_PASS}",
     ]
   }
@@ -130,14 +130,20 @@ resource "oci_core_virtual_network" "dbfree_vcn" {
 output "instance_public_ip" {
   value = <<EOF
   
-  Wait 5 minutes for the instance to be ready.
+  to connect to the database 
 
-  Login into http://${oci_core_instance.instance.public_ip}:1880
+  ssh -i server.key opcuntu@${oci_core_instance.instance.public_ip}
 
-  MQTT server can be connected to at ${oci_core_instance.instance.public_ip}:1883
+  sudo su - oracle 
 
-  ssh -i server.key ubuntu@${oci_core_instance.instance.public_ip}
-  
+  #set the environment variables 
+  export ORACLE_SID=FREE 
+  export ORAENV_ASK=NO 
+  . /opt/oracle/product/23c/dbhomeFree/bin/oraenv
+  cd $ORACLE_HOME/bin
+  lsnrctl status
+  ./sqlplus / as sysdba
+
 
 EOF
 }

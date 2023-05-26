@@ -43,6 +43,6 @@ variable "AD_number" {
 
 
 variable "DB_PASS" {
-  description = "database password"
-  default     = "pass"
+  description = "SYSTEM and PDBADMIN password"
+  default     = "Tiger$tr0ng2023"
 }
