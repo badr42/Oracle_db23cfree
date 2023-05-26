@@ -36,6 +36,7 @@ ssh-keygen -t rsa -b 2048 -N "" -f server.key
 
 ## Build
 To build simply execute the next commands. 
+
 ```
 terraform init
 terraform plan
@@ -45,8 +46,8 @@ terraform apply
 
 
 ## Connect to the DB
-
-ssh -i server.key opc@<instance-public-ip>
+```
+ssh -i server.key opc@instance-public-ip
 
 #Switch to user Oracle  
 sudo su - oracle 
@@ -59,3 +60,4 @@ cd $ORACLE_HOME/bin
   
 lsnrctl status
 ./sqlplus / as sysdba
+```
