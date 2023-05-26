@@ -42,11 +42,6 @@ variable "AD_number" {
 }
 
 
-variable "" {
-  description = "db Admin password"
-}
-
-
 variable "DB_PASS" {
   description = "database password"
   default     = "pass"
