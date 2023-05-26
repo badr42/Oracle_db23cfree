@@ -15,8 +15,8 @@ Node-RED is an open-source, flow-based programming tool that enables users to cr
 1. Log into cloud console 
 2. Run the following 
 ```
-git clone https://github.com/badr42/noderedOnOCI
-cd noderedOnOCI
+git clone https://github.com/badr42/Oracle_db23cfree
+cd Oracle_db23cfree
 export TF_VAR_tenancy_ocid='<tenancy-ocid>'
 export TF_VAR_compartment_ocid='<comparment-ocid>'
 export TF_VAR_region='<home-region>'
@@ -48,7 +48,7 @@ terraform apply
 
 ssh -i server.key opc@<instance-public-ip>
 
-Switch to user Oracle  
+#Switch to user Oracle  
 sudo su - oracle 
 
 **set the environment variables**
