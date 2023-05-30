@@ -132,7 +132,7 @@ output "instance_public_ip" {
   
   to connect to the database 
 
-  ssh -i server.key opcuntu@${oci_core_instance.instance.public_ip}
+  ssh -i server.key opc@${oci_core_instance.instance.public_ip}
 
   sudo su - oracle 
 
