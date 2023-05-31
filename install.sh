@@ -39,18 +39,18 @@ export ORAENV_ASK=NO
 #ORACLE_HOME = [] ? /opt/oracle/product/23c/dbhomeFree
 
 
-cd $ORACLE_HOME/bin
-lsnrctl status
+#cd $ORACLE_HOME/bin
+#lsnrctl status
 #./sqlplus / as sysdba
 
 
-./sqlplus -S /nolog <<EOF
-set heading off
-set feedback off
-connect / as sysdba
-SELECT version FROM v\$instance;
-exit;
-EOF
+#./sqlplus -S /nolog <<EOF
+#set heading off
+#set feedback off
+#connect / as sysdba
+#SELECT version FROM v\$instance;
+#exit;
+#EOF
 
 
 
